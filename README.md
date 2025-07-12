@@ -2,7 +2,7 @@
 
 A bsic stack Python Flask application that captures user media (camera) and redirects to a specified URL. 
 
-## 🚀 Installation
+## Installation
 
 1. **Clone or download the project**
 2. **Install dependencies**:
@@ -10,7 +10,7 @@ A bsic stack Python Flask application that captures user media (camera) and redi
    pip install -r requirements.txt
    ```
 
-## 📱 Usage
+## Usage
 
 ### First Time Setup
 When you run the application for the first time, it will ask you to:
@@ -31,13 +31,8 @@ You'll see a menu with 4 options:
 3. **Change redirect URL** - Update the URL to redirect to
 4. **Exit** - Close the application
 5. 
-## 🔧 Configuration
 
-The application automatically creates a `config.json` file that stores:
-- `redirect_url`: The URL to redirect to after capture
-- `first_launch`: Whether this is the first time running the app
-
-## 🔒 Privacy & Permissions
+## Privacy & Permissions
 
 - The application requests camera permission from the user
 - Images are saved locally in the `captured_img` folder
@@ -45,11 +40,11 @@ The application automatically creates a `config.json` file that stores:
 - Camera stream is stopped immediately after capture
 - Always use this ETHICALLY 
 
-## 📸 Image Storage
+## Image Storage
 
 Images are saved with the format: `capture_YYYYMMDD_HHMMSS.png`
 
-Example: `capture_20231201_143022.png`
+Example: `capture_20250712_200217.png`
 
 ## 📝 License
 
