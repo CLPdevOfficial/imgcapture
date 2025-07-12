@@ -1,4 +1,4 @@
-# 🎯 IMG Capture
+# IMG Capture
 
 A bsic stack Python Flask application that captures user media (camera) and redirects to a specified URL. 
 
@@ -30,7 +30,6 @@ You'll see a menu with 4 options:
 2. **Open saved images folder** - Opens the `captured_img` directory
 3. **Change redirect URL** - Update the URL to redirect to
 4. **Exit** - Close the application
-5. 
 
 ## Privacy & Permissions
 
@@ -38,7 +37,6 @@ You'll see a menu with 4 options:
 - Images are saved locally in the `captured_img` folder
 - No data is sent to external servers
 - Camera stream is stopped immediately after capture
-- Always use this ETHICALLY 
 
 ## Image Storage
 
@@ -46,8 +44,11 @@ Images are saved with the format: `capture_YYYYMMDD_HHMMSS.png`
 
 Example: `capture_20250712_200217.png`
 
-## 📝 License
+## 📝 Licenses
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![Ethics](https://img.shields.io/badge/Ethics-Guidelines-blue)](ETHICS)
 
 
-
+** Always use this ETHICALLY **
 **Made using flask**
