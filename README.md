@@ -50,5 +50,5 @@ Example: `capture_20250712_200217.png`
 [![Ethics](https://img.shields.io/badge/Ethics-Guidelines-blue)](ETHICS)
 
 
-** Always use this ETHICALLY **
+*Always use this ETHICALLY*
 **Made using flask**
