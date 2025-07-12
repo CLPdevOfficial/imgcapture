@@ -88,9 +88,8 @@ def open_images_folder():
     open_folder()
     return jsonify({'success': True})
 
-if __name__ == '__main__':
+def main_menu():
     config = load_config()
-    
     if config['first_launch']:
         print("=" * 50)
         print("🎯 IMG Capture - First Time Setup")
@@ -98,7 +97,6 @@ if __name__ == '__main__':
         print("Welcome to IMG Capture!")
         print("This is your first time running the application.")
         print()
-        
         url = input("Enter the URL to redirect to after capture: ").strip()
         if url:
             config['redirect_url'] = url
@@ -109,7 +107,6 @@ if __name__ == '__main__':
             print("⚠️  Using default URL: https://www.google.com")
             config['first_launch'] = False
             save_config(config)
-    
     while True:
         print("\n" + "=" * 50)
         print("🎯 IMG Capture")
@@ -119,19 +116,22 @@ if __name__ == '__main__':
         print("3. Change redirect URL")
         print("4. Exit")
         print()
-        
         choice = input("Enter your choice (1-4): ").strip()
-        
         if choice == '1':
             print("\n🚀 Starting IMG Capture server...")
             print("📱 Open your browser and go to: http://localhost:5000")
             print("📸 The app will capture media and redirect to:", config['redirect_url'])
             print("⏹️  Press Ctrl+C to stop the server")
             print()
+            # Open browser automatically
+            webbrowser.open('http://localhost:5000')
             try:
-                app.run(debug=True, host='0.0.0.0', port=5000)
+                # Only listen on localhost for safety
+                app.run(debug=True, host='127.0.0.1', port=5000, use_reloader=False)
             except KeyboardInterrupt:
                 print("\n🛑 Server stopped.")
+            # Exit the menu loop after server stops
+            break
         elif choice == '2':
             print("📁 Opening captured images folder...")
             open_folder()
@@ -148,4 +148,7 @@ if __name__ == '__main__':
             print("👋 Goodbye!")
             break
         else:
-            print("❌ Invalid choice. Please enter 1-4.") 
+            print("❌ Invalid choice. Please enter 1-4.")
+
+if __name__ == '__main__':
+    main_menu()
