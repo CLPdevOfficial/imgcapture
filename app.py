@@ -84,6 +84,7 @@ def main_menu():
     if config['first_launch']:
         print("=" * 50)
         print("IMG Capture - First Time Setup")
+        print("Tool by CLPdevOfficial")
         print("=" * 50)
         print("Welcome to IMG Capture!")
         print("This is your first time running the application.")
@@ -109,10 +110,10 @@ def main_menu():
         print()
         choice = input("Enter your choice (1-4): ").strip()
         if choice == '1':
-            print("\n🚀 Starting IMG Capture server...")
-            print("📱 Open your browser and go to: http://localhost:5000")
-            print("📸 The app will capture media and redirect to:", config['redirect_url'])
-            print("⏹️  Press Ctrl+C to stop the server")
+            print("\nStarting IMG Capture server...")
+            print("Open your browser and go to: http://localhost:5000")
+            print("The app will capture media and redirect to:", config['redirect_url'])
+            print("Press Ctrl+C to stop the server")
             print()
             webbrowser.open('http://localhost:5000')
             try:
