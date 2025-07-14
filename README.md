@@ -38,12 +38,6 @@ You'll see a menu with 4 options:
 - No data is sent to external servers
 - Camera stream is stopped immediately after capture
 
-## Image Storage
-
-Images are saved with the format: `capture_YYYYMMDD_HHMMSS.png`
-
-Example: `capture_20250712_200217.png`
-
 ## 📝 Licenses
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
@@ -51,4 +45,5 @@ Example: `capture_20250712_200217.png`
 
 
 *Always use this ETHICALLY*
+
 **Made using flask**
