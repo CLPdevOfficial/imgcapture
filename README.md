@@ -31,13 +31,6 @@ You'll see a menu with 4 options:
 3. **Change redirect URL** - Update the URL to redirect to
 4. **Exit** - Close the application
 
-## Privacy & Permissions
-
-- The application requests camera permission from the user
-- Images are saved locally in the `captured_img` folder
-- No data is sent to external servers
-- Camera stream is stopped immediately after capture
-
 ## 📝 Licenses
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
