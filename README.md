@@ -9,6 +9,11 @@ A bsic stack Python Flask application that captures user media (camera) and redi
    ```bash
    pip install -r requirements.txt
    ```
+   or just use
+   ```bash
+   pip install Flask
+   ```
+   there is only one library 
 
 ## Usage
 
